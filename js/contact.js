@@ -1,21 +1,11 @@
-const form = document.querySelector("#contactForm");
-const successDiv = document.querySelector(".successContainer");
+const forms = document.querySelector("#contactForm");
 
-form.addEventListener("submit", validateForm);
+forms.addEventListener("submit", validateForm);
 
-// form validation
 function validateForm(event) {
   event.preventDefault();
   console.log("Submitted");
 
-
-  validateName();
-  validateAnswer();
-  validateEmailInput();
-  validateAddress();
-  displaySuccess();
-
-  // name validation
   function validateName() {
     const nameField = document.querySelector("#name");
     const nameError = document.querySelector("#nameError");
@@ -40,7 +30,6 @@ function validateForm(event) {
     }
   }
 
-  // answer validation
   function validateAnswer() {
     const answerField = document.querySelector("#answer");
     const answerError = document.querySelector("#answerError");
@@ -65,7 +54,6 @@ function validateForm(event) {
     }
   }
 
-  // email validation
   function validateEmailInput() {
     const emailField = document.querySelector("#email");
     const emailError = document.querySelector("#emailError");
@@ -102,7 +90,6 @@ function validateForm(event) {
     }
   }
 
-  // address validation
   function validateAddress() {
     const addressField = document.querySelector("#address");
     const addressError = document.querySelector("#addressError");
@@ -127,52 +114,8 @@ function validateForm(event) {
     }
   }
 
-  // display message
-  function displaySuccess() {
-    if (validateName() === true) {
-      checkAnswer();
-    } else {
-      displayMissing();
-    }
-
-    function checkAnswer() {
-      if (validateAnswer() === true) {
-        checkEmail();
-      } else {
-        displayMissing();
-      }
-    }
-
-    function checkEmail() {
-      if (validateEmailInput() === true) {
-        checkAddress();
-      } else {
-        displayMissing();
-      }
-    }
-
-    function checkAddress() {
-      if (validateAddress() === true) {
-        displaySuccessMessage();
-      } else {
-        displayMissing();
-      }
-    }
-
-    function displayMissing() {
-      let html = "";
-
-      html += ` <h3>Ooops.. Something is missing!</h3>`;
-
-      successDiv.innerHTML = html;
-    }
-
-    function displaySuccessMessage() {
-      let html = "";
-
-      html += ` <h2>You're all good &#x1f44d;</h2>`;
-
-      successDiv.innerHTML = html;
-    }
-  }
+  validateName();
+  validateAnswer();
+  validateEmailInput();
+  validateAddress();
 }
