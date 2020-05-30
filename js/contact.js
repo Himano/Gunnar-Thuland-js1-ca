@@ -6,6 +6,7 @@ function validateForm(event) {
   event.preventDefault();
   console.log("Submitted");
 
+  // Name section
   function validateName() {
     const nameField = document.querySelector("#name");
     const nameError = document.querySelector("#nameError");
@@ -29,7 +30,9 @@ function validateForm(event) {
       return false;
     }
   }
+  //Name section ^
 
+  //Answer section
   function validateAnswer() {
     const answerField = document.querySelector("#answer");
     const answerError = document.querySelector("#answerError");
@@ -53,7 +56,9 @@ function validateForm(event) {
       return false;
     }
   }
+  //Answer Section ^
 
+  //Email Section
   function validateEmailInput() {
     const emailField = document.querySelector("#email");
     const emailError = document.querySelector("#emailError");
@@ -89,7 +94,9 @@ function validateForm(event) {
       return false;
     }
   }
+  //Email section ^
 
+  //Adress section
   function validateAddress() {
     const addressField = document.querySelector("#address");
     const addressError = document.querySelector("#addressError");
@@ -113,7 +120,9 @@ function validateForm(event) {
       return false;
     }
   }
+  //Adress section ^
 
+  //funtion calls
   validateName();
   validateAnswer();
   validateEmailInput();
