@@ -5,3 +5,11 @@
 @import "imports/card.css";
 @import "imports/details.css";
 @import "imports/form.css";
+
+.col-sm-6 {
+  display: inline-block;
+}
+
+.image {
+  height: 350px;
+}

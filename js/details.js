@@ -20,13 +20,13 @@ fetch(detailsUrl)
     createDetails(manga);
     const detailHTML = `
     <div class="detail-container">
-    <img class="details-image" src="https://cdn.mangaeden.com/mangasimg/${manga.image}" alt="Title/Name" />
+    <img class="details-image" src="https://cdn.mangaeden.com/mangasimg/${data[i].image}" alt="Title/Name" />
     <div class="detail-details">
-        <h1>${manga.title}</h1>
-        <p>Also known as: <span class="value" id="propertyName">${manga.aka[0]}</span></p>
-        <p>Author: <span class="value" id="propertyName">${manga.author}</span></p>
-        <p>Released: <span class="value" id="propertyName">${manga.released}</span></p>
-        <p>summary: <span class="value" id="propertyName">${manga.description}</span></p>
+        <h1>${data.title}</h1>
+        <p>Also known as: <span class="value" id="propertyName">${data[i].aka[0]}</span></p>
+        <p>Author: <span class="value" id="propertyName">${data[i].author}</span></p>
+        <p>Released: <span class="value" id="propertyName">${data[i].released}</span></p>
+        <p>summary: <span class="value" id="propertyName">${data[i].description}</span></p>
     </div>
 </div>
     
