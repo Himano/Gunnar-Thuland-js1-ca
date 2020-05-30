@@ -17,16 +17,22 @@ fetch(detailsUrl)
     return response.json();
   })
   .then(function (manga) {
-    createDetails(manga);
+    const detTitle = manga.title;
+    const detImage = manga.image;
+    const detAuthor = manga.author;
+    const detDescription = manga.description;
+    const detChapters = manga.chapters.length;
+    const detReleased = manga.released;
+
     const detailHTML = `
     <div class="detail-container">
-    <img class="details-image" src="https://cdn.mangaeden.com/mangasimg/${data[i].image}" alt="Title/Name" />
+    <img class="details-image" src="https://cdn.mangaeden.com/mangasimg/${detImage}" alt="Title/Name" />
     <div class="detail-details">
-        <h1>${data.title}</h1>
-        <p>Also known as: <span class="value" id="propertyName">${data[i].aka[0]}</span></p>
-        <p>Author: <span class="value" id="propertyName">${data[i].author}</span></p>
-        <p>Released: <span class="value" id="propertyName">${data[i].released}</span></p>
-        <p>summary: <span class="value" id="propertyName">${data[i].description}</span></p>
+        <h1>${detTitle}</h1>
+        <p>Author: <span class="value" id="propertyName">${detAuthor}</span></p>
+        <p>Chapters: <span class="value" id="propertyName">${detChapters}</span></p>
+        <p>Released: <span class="value" id="propertyName">${detReleased}</span></p>
+        <p>summary: <span class="value" id="propertyName">${detDescription}</span></p>
     </div>
 </div>
     
@@ -36,7 +42,3 @@ fetch(detailsUrl)
   .catch(function (error) {
     console.dir(error);
   });
-
-function createDetails(details) {
-  console.dir(details);
-}
